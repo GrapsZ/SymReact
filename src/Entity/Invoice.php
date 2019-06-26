@@ -2,11 +2,22 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\InvoiceRepository")
+ * @ApiResource(
+ *     attributes={
+ *          "order": {"sentAt":"desc"},
+ *          "pagination_enabled"=true
+ *     }
+ * )
+ * @ApiFilter(OrderFilter::class, properties={"amount", "sentAt"})
  */
+
 class Invoice
 {
     /**
