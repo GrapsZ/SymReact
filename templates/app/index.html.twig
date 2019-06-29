@@ -3,14 +3,14 @@
 {% block title "Mon application React" %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="/build/app.css">
+    <link href="https://bootswatch.com/4/yeti/bootstrap.min.css" rel="stylesheet">
+    {{ encore_entry_link_tags('app') }}
 {% endblock %}
 
 {% block body %}
-    <h1>Page d'accueil</h1>
+    <div id="app"></div>
 {% endblock %}
 
 {% block javascripts %}
-    <script src="/build/runtime.js"></script>
-    <script src="/build/app.js"></script>
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}

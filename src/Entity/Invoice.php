@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      },
  *     attributes={
  *          "order": {"sentAt":"desc"},
- *          "pagination_enabled"=true
+ *          "pagination_enabled"=false
  *     },
  *     normalizationContext={
  *          "groups"={"invoices_read"}
