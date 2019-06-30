@@ -90,14 +90,14 @@ const InvoicesPage = (props) => {
 
             <table className="table table-hover">
                 <thead>
-                <tr>
-                    <td>Numéro</td>
-                    <td>Client</td>
-                    <td className="text-center">Date</td>
-                    <td className="text-center">Statut</td>
-                    <td className="text-center">Montant</td>
-                    <td>Actions</td>
-                </tr>
+                    <tr>
+                        <th>Numéro</th>
+                        <th>Client</th>
+                        <th className="text-center">Date</th>
+                        <th className="text-center">Statut</th>
+                        <th className="text-center">Montant</th>
+                        <th>Actions</th>
+                    </tr>
                 </thead>
                 <tbody>
                 {paginatedInvoices.map(invoice =>

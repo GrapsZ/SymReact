@@ -9,6 +9,7 @@ function findAll() {
 function deleteCustomer(id) {
     return axios.delete("http://localhost:8000/api/clients/" + id);
 }
+
 export default {
     findAll: findAll,
     delete: deleteCustomer

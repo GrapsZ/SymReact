@@ -19,6 +19,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      },
  *     attributes={
  *          "order": {"sentAt":"desc"},
+ *          "pagination_items_per_page"=20,
  *          "pagination_enabled"=false
  *     },
  *     normalizationContext={
