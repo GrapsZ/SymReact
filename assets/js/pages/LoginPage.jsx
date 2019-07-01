@@ -1,6 +1,7 @@
 import React, {useContext, useState} from "react";
 import AuthAPI from "../services/authAPI";
 import AuthContext from "../contexts/AuthContext";
+import Field from "../components/foms/Field";
 
 const LoginPage = ({history}) => {
     const {setIsAuthenticated} = useContext(AuthContext);
@@ -36,44 +37,42 @@ const LoginPage = ({history}) => {
 
     return (
         <>
-        <h1>Connexion à l'application</h1>
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label htmlFor="username">
-                    Adresse email
-                </label>
-                <input
+            <h1>Connexion à l'application</h1>
+            <form onSubmit={handleSubmit}>
+
+                <Field
+                    label="Adresse email"
+                    name="username"
                     value={credentials.username}
                     onChange={handleChange}
                     type="email"
-                    placeholder="Adresse email de connexion"
-                    name="username"
                     id="username"
+                    placeholder="Adresse email de connexion"
+                    error={error}
                     className={"form-control w-50" + (error && " is-invalid")}
                 />
                 {error && <p className="invalid-feedback">
                     {error}
                 </p>}
-            </div>
-            <div className="form-group">
-                <label htmlFor="password">
-                    Mot de passe
-                </label>
-                <input
+
+                <Field
+                    label="Mot de passe"
+                    name="password"
                     value={credentials.password}
                     onChange={handleChange}
                     type="password"
-                    placeholder="Mot de passe"
-                    name="password"
                     id="password"
+                    placeholder="Adresse email de connexion"
+                    error={error}
                     className="form-control w-50"
                 />
-            </div>
-            <div className="form-group">
-                <button type="submit" className="btn btn-success">Connexion</button>
-            </div>
-        </form>
-    </>);
+
+                <div className="form-group">
+                    <button type="submit" className="btn btn-success">Connexion</button>
+                </div>
+            </form>
+        </>
+    );
 };
 
 export default LoginPage;
