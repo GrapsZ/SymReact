@@ -77,7 +77,7 @@ const CustomersPage = (props) => {
 
     return (
         <>
-            <div className="mb-5 d-flex justify-content-between align-items-center">
+            <div className="mb-3 d-flex justify-content-between align-items-center">
                 <h1>Liste des clients</h1>
                 <Link to="/clients/new" className="btn btn-primary">
                     Créer un client
@@ -106,7 +106,7 @@ const CustomersPage = (props) => {
                     <tr key={customer.id}>
                         <td>{customer.id}</td>
                         <td>
-                            <a href="#">{customer.firstName} {customer.lastName}</a>
+                            <a href={"#/clients/" + customer.id}>{customer.firstName} {customer.lastName}</a>
                         </td>
                         <td>{customer.email}</td>
                         <td>{customer.company}</td>

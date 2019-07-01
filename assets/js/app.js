@@ -10,6 +10,7 @@ import AuthApi from "./services/authAPI";
 import AuthContext from "./contexts/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import CustomerPage from "./pages/CustomerPage";
+import InvoicePage from "./pages/InvoicePage";
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.css');
@@ -33,6 +34,7 @@ const App = () => {
                     <Switch>
                         <PrivateRoute path="/clients/:id" component={CustomerPage} />
                         <PrivateRoute path="/clients" component={CustomersPage} />
+                        <PrivateRoute path="/factures/:id" component={InvoicePage} />
                         <PrivateRoute path="/factures" component={InvoicesPage} />
                         <Route path="/connexion" component={LoginPage} />
                         <Route path="/" component={HomePage} />
